@@ -12,30 +12,27 @@ public class Graph {
 
     public ArrayList<String> lortuPelikulak(String pelikula){
     	
-        ArrayList<Boolean> lag = new ArrayList<Boolean>();
+        Boolean[] lag = new BoonumVerticeslean[];
         Queue<Integer> aztertuGabeak = new LinkedList<Integer>();
         boolean[] aztertuak = new boolean[numVertices];
         boolean maila = true;
         ArrayList<String> emaitza = new ArrayList<String>();
 
-        aztertuGabeak.add(0);
+        int indizea = index(pelikula);
+        aztertuGabeak.add(indizea);
+        lag[indizea] = true;
+        aztertuak[indizea] = true;
         
         while(!aztertuGabeak.isEmpty()) {
         	Integer unekoa = aztertuGabeak.remove();
-
-        	if(lag.size()==0) {
-        		lag.add(true);
-        	}
-        	else {
-        		lag.add(!maila);
-        	}
 
             if (vertices[unekoa] == pelikula) {
 
                 for (int i = 0; i < vertices.length; i++) {
                     if (adjMatrix[unekoa][i] == 1 && aztertuak[i] == false) {
-                        aztertuGabeak.add(adjMatrix[unekoa][i]);
-                        aztertuak[adjMatrix[unekoa][i]] = true;
+                        aztertuGabeak.add(i);
+                        aztertuak[i] = true;
+                        lag[i] = !lag[unekoa]
                     }
                 }
             }
