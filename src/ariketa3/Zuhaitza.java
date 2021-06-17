@@ -10,12 +10,8 @@ public class Zuhaitza {
 	public ArrayList<Integer> lortuZerrendaOrdenatua(){
 		ArrayList<Integer> emaitza = new ArrayList<Integer>();
 		
-		if(root == null) {
-			System.out.println("zuhaitz hutsa");
-		}
-		else {
-			emaitza = lortuZerrenda(emaitza, root);
-		}
+		emaitza = lortuZerrenda(emaitza, root);
+
 		return emaitza;
 	}
 
