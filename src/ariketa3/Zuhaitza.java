@@ -17,7 +17,7 @@ public class Zuhaitza {
 
 	private ArrayList<Integer> lortuZerrenda(ArrayList<Integer> emaitza, BinaryTreeNode<Integer> unekoa) {
 		if(unekoa!=null) {
-			for(int i=0;i<unekoa.getBalioak().length;i++) {
+			for(int i=0;i<unekoa.getBalioak().length+1;i++) {
 				emaitza = lortuZerrenda(emaitza, unekoa.getUmeak()[i]);
 				emaitza.add(unekoa.getBalioak()[i]);
 			}
