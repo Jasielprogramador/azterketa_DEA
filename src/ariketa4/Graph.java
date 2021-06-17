@@ -26,8 +26,6 @@ public class Graph {
         while(!aztertuGabeak.isEmpty()) {
         	Integer unekoa = aztertuGabeak.remove();
 
-            if (vertices[unekoa] == pelikula) {
-
                 for (int i = 0; i < vertices.length; i++) {
                     if (adjMatrix[unekoa][i] == 1 && aztertuak[i] == false) {
                         aztertuGabeak.add(i);
